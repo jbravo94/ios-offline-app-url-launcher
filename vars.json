@@ -1,0 +1,14 @@
+{
+    "title": "Title",
+    "encodedTouchIcon": "",
+    "encodedIcon": "",
+    "instructionImage": "",
+    "instructionImageScale": 331,
+    "launchImageLandscape": "",
+    "heightNonRetinapx": 667,
+    "widthNonRetinapx": 375,
+    "launchImagePortrait": "",
+    "pixelRatio": 2,
+    "color": "#FFFFFF",
+    "launchUrl": "exp://10.0.0.10:19000"
+}

@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>{{vars.title}}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon-precomposed" href="data:image/jpeg;charset=utf-8;base64,{{vars.encodedTouchIcon}}">
+
+<link rel="apple-touch-startup-image" href="data:image/jpeg;charset=utf-8;base64,{{vars.launchImageLandscape}}"
+ media="(device-width: {{vars.heightNonRetinapx}}) and (device-height: {{vars.widthNonRetinapx}}) and (-webkit-device-pixel-ratio: {{vars.pixelRatio}}) and (orientation: landscape)" />
+<link rel="apple-touch-startup-image" href="data:image/jpeg;charset=utf-8;base64,{{vars.launchImagePortrait}}" 
+media="(device-width: {{vars.heightNonRetinapx}}) and (device-height: {{vars.widthNonRetinapx}}) and (-webkit-device-pixel-ratio: {{vars.pixelRatio}}) and (orientation: portrait)" />
+
+<style>
+body {
+    background-color: {{vars.color}}
+}
+h1 {
+    font-family: -apple-system;
+    font-weight: 800;
+    margin: 50px;
+    text-align: center;
+}
+h2 {
+    font-family: -apple-system;
+    font-weight: 800;
+    margin: 50px;
+    text-align: center;
+}
+p {
+    font-family: -apple-system;
+    font-weight: 400;
+    margin: 50px;
+    text-align: center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+}
+.desc {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<img id="pageIcon" width="80" src="data:image/jpeg;charset=utf-8;base64,{{vars.encodedIcon}}" class="center" vspace="30"></img>
+<h1 id="pageTitle">Add Home Screen Launcher</h1>
+<h2 id="pageSubtitle">{{vars.title}}</h2>
+<p id="pageText">Add this launcher for '{{vars.title}}' to your home screen. To add a launcher, tap the 'Share' icon, then tap 'Add to Home Screen'. Safari will create a new icon on your Home screen that will launch '{{vars.title}}' directly.</p>
+<img id="pageDesc" src="data:image/jpeg;charset=utf-8;base64,{{vars.instructionImage}}" class="desc" width="{{vars.instructionImageScale}}"></img>
+
+  <a id="jump" href="{{vars.launchUrl}}"></a>
+  <script type="text/javascript">
+  if (window.navigator.standalone) {
+    document.getElementById("pageTitle").style.color = "white";
+    document.getElementById("pageSubtitle").style.color = "white";
+    document.getElementById("pageText").style.color = "white";
+    var iconHide = document.getElementById('pageIcon');
+    iconHide.style.display = 'none';
+    var descHide = document.getElementById('pageDesc');
+    descHide.style.display = 'none';
+    var e = document.getElementById('jump');
+    var ev = document.createEvent('MouseEvents');
+ev.initEvent('click',true,true,document.defaultView,1,0,0,0,0,false,false,false,false,0,null);
+    document.body.style.backgroundColor = '{{vars.color}}';
+    setTimeout(function() { e.dispatchEvent(ev); }, 25);
+  }
+  </script>
+</body>
+</html>
+</body>
